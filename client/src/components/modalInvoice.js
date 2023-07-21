@@ -36,7 +36,6 @@ function ModalInvoice({ show, showInvoice, id }) {
         <Row className="">
           <Col md={5}>
             <h3 className="fw-bold">Kereta Api</h3>
-            <p>Saturday, 21 Februari 2020</p>
           </Col>
           <Col md={5}>
             <img src={Qr} className="" alt="Qr" />
@@ -54,10 +53,10 @@ function ModalInvoice({ show, showInvoice, id }) {
         <Row className=" ms-2">
           <Col md={4}>
             <h4 className="fw-bold">{transaction?.ticket.start_time}</h4>
-            <p>21 Februari 2020</p>
+            <p>{transaction?.ticket.start_date}</p>
           </Col>
           <Col md={4}>
-            <h4 className="fw-bold">Jakarta (GMR)</h4>
+            <h4 className="fw-bold">{transaction?.ticket.start_station.name}</h4>
             <p>Station {transaction?.ticket.start_station.name}</p>
           </Col>
         </Row>
@@ -65,10 +64,10 @@ function ModalInvoice({ show, showInvoice, id }) {
         <Row className="ms-2">
           <Col md={4}>
             <h4 className="fw-bold">{transaction?.ticket.arival_time}</h4>
-            <p>21 Februari 2020</p>
+            <p>{transaction?.ticket.start_date}</p>
           </Col>
           <Col md={4}>
-            <h4 className="fw-bold">Surabaya (SBY)</h4>
+            <h4 className="fw-bold">{transaction?.ticket.destination_station.name}</h4>
             <p>Station {transaction?.ticket.destination_station.name}</p>
           </Col>
         </Row>

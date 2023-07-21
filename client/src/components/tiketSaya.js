@@ -4,8 +4,14 @@ import Train from "../assets/img/myticket.png";
 
 import { useQuery } from "react-query";
 import { API } from "../config/api";
+import ModalETiket from "./modalETiket";
+import { useState } from "react";
 
 function Tiketsaya() {
+  const [showETiket, setShowETiket] = useState(false);
+  const [idTransaction, setIdTransaction] = useState();
+
+
   let navigate = useNavigate();
 
   let { data: myTicket } = useQuery("TicketCache", async () => {
@@ -67,7 +73,9 @@ function Tiketsaya() {
             </Col>
             <Col md={3}>
               <h5>{data.ticket.start_station.name}</h5>
-              <p className="text-secondary">Station {data.ticket.start_station.name}</p>
+              <p className="text-secondary">
+                Station {data.ticket.start_station.name}
+              </p>
             </Col>
           </Row>
 
@@ -144,7 +152,7 @@ function Tiketsaya() {
                 </Button>
               )}
               {data.status === "success" && (
-                <Button variant="success" className="w-100">
+                <Button variant="success" className="w-100" onClick={() => {setShowETiket(true); setIdTransaction(data.id)} } >
                   Sudah Bayar
                 </Button>
               )}
@@ -153,6 +161,7 @@ function Tiketsaya() {
         </div>
       ))}
       ;
+    <ModalETiket show={showETiket} id={idTransaction} showETiket={setShowETiket}/>
     </Container>
   );
 }

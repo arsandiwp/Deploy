@@ -130,7 +130,7 @@ function Invoice() {
               </Col>
 
               <Col>
-                <p>Rp.250.000</p>
+                <p>Rp. {transaction?.ticket.price}</p>
               </Col>
             </Row>
 
@@ -139,13 +139,13 @@ function Invoice() {
                 <p>Total</p>
               </Col>
               <Col>
-                <p className="fw-bold">Rp.250.000</p>
+                <p className="fw-bold">Rp. {transaction?.ticket.price}</p>
               </Col>
             </Row>
 
             <Row className="border mt-3" style={{ width: "50%" }}>
               <Col style={{ padding: "0", margin: "0" }}>
-                <Button type="submit" onClick={() => handleBuy.mutate(id)} variant="warning" className="bg-gradient w-100">
+                <Button type="submit" onClick={() => handleBuy.mutate(id)} variant="danger" className="bg-gradient w-100">
                   Bayar Sekarang
                 </Button>
               </Col>
@@ -153,10 +153,9 @@ function Invoice() {
           </div>
 
           <div className="" style={{ width: "35%", marginTop: "-170px" }}>
-            <Row className="border bg-body-secondary">
+            <Row className="border bg-body-secondary rounded">
               <Col md={9} className="p-2">
                 <h4>Kereta Api</h4>
-                <p>Saturday, 21 Februari 2020</p>
               </Col>
               <Col>
                 <img src={Qr} className="mt-2" alt="Qr Code" />
@@ -165,31 +164,31 @@ function Invoice() {
             </Row>
 
             <Row className="">
-              <Col>
+              <Col className="">
                 <h4>{transaction?.ticket.name_train}</h4>
                 <p>{transaction?.ticket.type_train}</p>
               </Col>
             </Row>
 
             <Row className="">
-              <Col md={7}>
+              <Col md={5}>
                 <h6>{transaction?.ticket.start_time}</h6>
-                <p>21 Februari 2020</p>
+                <p>{transaction?.ticket.start_date}</p>
               </Col>
               <Col>
-                <h6>Jakarta (GMR)</h6>
-                <p>{transaction?.ticket.start_station.name}</p>
+                <h6>{transaction?.ticket.start_station.name}</h6>
+                <p>Station {transaction?.ticket.start_station.name}</p>
               </Col>
             </Row>
 
             <Row className="">
-              <Col md={7}>
+              <Col md={5}>
                 <h6>{transaction?.ticket.arival_time}</h6>
-                <p>21 Februari 2020</p>
+                <p>{transaction?.ticket.start_date}</p>
               </Col>
               <Col>
-                <h6>Surabaya (SBY)</h6>
-                <p>{transaction?.ticket.destination_station.name}</p>
+                <h6>{transaction?.ticket.destination_station.name}</h6>
+                <p>Station {transaction?.ticket.destination_station.name}</p>
               </Col>
             </Row>
           </div>

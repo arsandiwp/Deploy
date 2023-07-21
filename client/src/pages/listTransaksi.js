@@ -58,15 +58,15 @@ function ListTransaksi() {
   return (
     <div>
       <Container>
-        <h1 className="my-4">List Transaction</h1>
+        <h1 className="my-5">List Transaction</h1>
         <Row>
-          <Col>
+          <Col md={1}>
             <p>No</p>
           </Col>
-          <Col>
+          <Col md={2}>
             <p>Users</p>
           </Col>
-          <Col>
+          <Col md={4}>
             <p>Tiket</p>
           </Col>
           <Col>
@@ -78,20 +78,35 @@ function ListTransaksi() {
         </Row>
         {transactions?.map((data, index) => (
           <Row>
-            <Col key={index}>
+            <Col key={index} md={1}>
               <p>{index + 1}</p>
             </Col>
-            <Col>
+            <Col md={2}>
               <p>{data.user.fullName}</p>
             </Col>
-            <Col>
+            <Col md={4}>
               <p>
-                {data.ticket.start_station.name} -{" "}
-                {data.ticket.destination_station.name}
+                Station {data.ticket.start_station.name} -{" "}
+                Station {data.ticket.destination_station.name}
               </p>
             </Col>
             <Col>
-              <p>{data.status}</p>
+            {data.status === "Pending" && (
+                <div
+                  className="text-danger"
+                  style={{ width: "80px" }}
+                >
+                  <p className="">{data.status}</p>
+                </div>
+              )}
+              {data.status === "success" && (
+                <div
+                  className="text-success"
+                  style={{ width: "80px" }}
+                >
+                  <p className="">{data.status}</p>
+                </div>
+              )}
             </Col>
 
             <Col className="">
