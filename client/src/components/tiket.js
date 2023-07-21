@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import Train from "../assets/img/Train.png";
+import Train from "../assets/img/train2.png";
 import Transfer from "../assets/img/transfer.png";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
@@ -52,7 +52,7 @@ function Tiket() {
           style={{ padding: "0", margin: "0" }}
         >
           <div className="bg-light mt-3">
-            <img src={Train} width="" height="" className="" alt="Icon Train" />{" "}
+            <img src={Train} width="" height="" className="py-2" alt="Icon Train" />{" "}
             Tiket Kerata api
           </div>
         </Col>
@@ -61,14 +61,14 @@ function Tiket() {
           <h5>Tiket Kereta Api</h5>
           <Row>
             <Form.Group as={Col} controlId="asal" className="mt-2">
-              <Form.Label>Asal</Form.Label>
+              <Form.Label>Awal</Form.Label>
               <Form.Select
                 className="mb-3"
                 value={form.start_station_id}
                 name="start_station_id"
                 onChange={handleChange}
               >
-                <option hidden>Station Start</option>
+                <option hidden>Awal Station</option>
                 {stations.map((item, index) => (
                   <option key={index} value={item.id}>
                     {item.name}
@@ -94,7 +94,7 @@ function Tiket() {
                 name="destination_station_id"
                 onChange={handleChange}
               >
-                <option hidden>Destination Station</option>
+                <option hidden>Tujuan Station</option>
                 {stations.map((item, index) => (
                   <option key={index} value={item.id}>
                     {item.name}
@@ -107,16 +107,16 @@ function Tiket() {
           <Row>
             <Form.Group as={Col} controlId="tglberangkat" className="mt-3">
               <Form.Label>Tanggal Berangkat</Form.Label>
-              <Form.Control type="date" />
+              <Form.Control type="date" disabled/>
             </Form.Group>
 
             <Form.Group as={Col} controlId="" className="mt-3">
-              <Form.Check type="checkbox" label="Pulang Pergi" />
+              <Form.Check type="checkbox" label="Pulang Pergi" disabled/>
             </Form.Group>
 
             <Form.Group as={Col} controlId="dewasa" className="mt-3">
               <Form.Label>Dewasa</Form.Label>
-              <Form.Select aria-label="Default select example">
+              <Form.Select aria-label="Default select example" disabled>
                 <option hidden>0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -126,8 +126,8 @@ function Tiket() {
 
             <Form.Group as={Col} controlId="bayi" className="mt-3">
               <Form.Label>Bayi</Form.Label>
-              <Form.Select aria-label="Default select example">
-                <option hidden>2</option>
+              <Form.Select aria-label="Default select example" disabled>
+                <option hidden>0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

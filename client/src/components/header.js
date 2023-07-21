@@ -91,12 +91,6 @@ function Header() {
                           Ticket
                         </Dropdown.Item>
                       </Link>
-
-                      <Link to="/invoice" style={{ textDecoration: "none" }}>
-                        <Dropdown.Item href="#/action-2">
-                          <img src={Bill} className="" alt="icket" /> Payment
-                        </Dropdown.Item>
-                      </Link>
                       <Dropdown.Divider />
                       <Dropdown.Item href="#" onClick={logout}>
                         <Link

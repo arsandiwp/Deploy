@@ -33,21 +33,30 @@ function Tiketsaya() {
           style={{ width: "90%" }}
         >
           <Row className="" key={index}>
-            <Col md={4} className="">
-              <img
-                src={Train}
-                className="d-inline-block align-top ps-3 pe-5 bg-danger bg-gradient"
-                alt="Brand"
-                style={{ borderEndEndRadius: 50, marginTop: "-15px" }}
-              />
+            <Col md={4} className="p-0">
+              {data.status === "Pending" && (
+                <img
+                  src={Train}
+                  className="d-inline-block align-top ps-3 pe-5 bg-danger bg-gradient"
+                  alt="Brand"
+                  style={{ borderEndEndRadius: 50, marginTop: "-14px" }}
+                />
+              )}
+              {data.status === "success" && (
+                <img
+                  src={Train}
+                  className="d-inline-block align-top ps-3 pe-5 bg-success bg-gradient"
+                  alt="Brand"
+                  style={{ borderEndEndRadius: 50, marginTop: "-14px" }}
+                />
+              )}
             </Col>
             <Col md={{ span: 4, offset: 4 }} className="text-end">
               <h3>Kereta Api</h3>
-              <p>Saturday, 21 Februari 2020</p>
             </Col>
           </Row>
 
-          <Row className="" style={{ marginTop: "-20px" }}>
+          <Row className="mt-4" style={{ marginTop: "" }}>
             <Col md={3}>
               <h4>{data.ticket.name_train}</h4>
               <p>{data.ticket.type_train}</p>
@@ -57,8 +66,8 @@ function Tiketsaya() {
               <p className="text-secondary">{data.ticket.start_date}</p>
             </Col>
             <Col md={3}>
-              <h5>Jakarta (GMR)</h5>
-              <p className="text-secondary">{data.ticket.start_station.name}</p>
+              <h5>{data.ticket.start_station.name}</h5>
+              <p className="text-secondary">Station {data.ticket.start_station.name}</p>
             </Col>
           </Row>
 
@@ -86,9 +95,9 @@ function Tiketsaya() {
               <p className="text-secondary">{data.ticket.start_date}</p>
             </Col>
             <Col md={3}>
-              <h5>Surabaya (SBY)</h5>
+              <h5>{data.ticket.destination_station.name}</h5>
               <p className="text-secondary">
-                {data.ticket.destination_station.name}
+                Station {data.ticket.destination_station.name}
               </p>
             </Col>
           </Row>

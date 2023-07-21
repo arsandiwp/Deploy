@@ -81,10 +81,10 @@ function DataTiket({startStation, destinationStation, search}) {
             <p>{data.destination_station.name}</p>
           </Col>
           <Col className="">
-            <p className="fw-bold">5 Jam</p>
+            <p className="fw-bold">{parseInt(data.arival_time) - parseInt(data.start_time)} Jam</p>
           </Col>
           <Col md={4} className="">
-            <p className="fw-bold text-danger">Rp. 250.000</p>
+            <p className="fw-bold text-danger">Rp. {data.price}</p>
           </Col>
         </Row>
       ))}
