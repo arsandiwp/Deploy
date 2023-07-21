@@ -1,6 +1,7 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Train from "../assets/img/myticket.png";
+import Qr from "../assets/img/qr.png";
 
 import { useQuery } from "react-query";
 import { API } from "../config/api";
@@ -10,7 +11,6 @@ import { useState } from "react";
 function Tiketsaya() {
   const [showETiket, setShowETiket] = useState(false);
   const [idTransaction, setIdTransaction] = useState();
-
 
   let navigate = useNavigate();
 
@@ -40,22 +40,12 @@ function Tiketsaya() {
         >
           <Row className="" key={index}>
             <Col md={4} className="p-0">
-              {data.status === "Pending" && (
-                <img
-                  src={Train}
-                  className="d-inline-block align-top ps-3 pe-5 bg-danger bg-gradient"
-                  alt="Brand"
-                  style={{ borderEndEndRadius: 50, marginTop: "-14px" }}
-                />
-              )}
-              {data.status === "success" && (
-                <img
-                  src={Train}
-                  className="d-inline-block align-top ps-3 pe-5 bg-success bg-gradient"
-                  alt="Brand"
-                  style={{ borderEndEndRadius: 50, marginTop: "-14px" }}
-                />
-              )}
+              <img
+                src={Train}
+                className="d-inline-block align-top ps-3 pe-5 bg-danger bg-gradient"
+                alt="Brand"
+                style={{ borderEndEndRadius: 50, marginTop: "-14px" }}
+              />
             </Col>
             <Col md={{ span: 4, offset: 4 }} className="text-end">
               <h3>Kereta Api</h3>
@@ -98,16 +88,22 @@ function Tiketsaya() {
                 </div>
               )}
             </Col>
-            <Col md={3}>
+            <Col>
               <h5>{data.ticket.arival_time}</h5>
               <p className="text-secondary">{data.ticket.start_date}</p>
             </Col>
-            <Col md={3}>
+            <Col md={4}>
               <h5>{data.ticket.destination_station.name}</h5>
               <p className="text-secondary">
                 Station {data.ticket.destination_station.name}
               </p>
             </Col>
+            {data.status === "success" && (
+              <Col md={2} style={{ marginTop: "-50px" }}>
+                <img src={Qr} alt="Qr Code" />
+                <p>TCK0101</p>
+              </Col>
+            )}
           </Row>
 
           <Row>
@@ -152,7 +148,14 @@ function Tiketsaya() {
                 </Button>
               )}
               {data.status === "success" && (
-                <Button variant="success" className="w-100" onClick={() => {setShowETiket(true); setIdTransaction(data.id)} } >
+                <Button
+                  variant="success"
+                  className="w-100"
+                  onClick={() => {
+                    setShowETiket(true);
+                    setIdTransaction(data.id);
+                  }}
+                >
                   Sudah Bayar
                 </Button>
               )}
@@ -161,7 +164,11 @@ function Tiketsaya() {
         </div>
       ))}
       ;
-    <ModalETiket show={showETiket} id={idTransaction} showETiket={setShowETiket}/>
+      <ModalETiket
+        show={showETiket}
+        id={idTransaction}
+        showETiket={setShowETiket}
+      />
     </Container>
   );
 }

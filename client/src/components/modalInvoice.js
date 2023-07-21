@@ -1,5 +1,5 @@
 import { Container, Modal, Row, Col } from "react-bootstrap";
-import Qr from "../assets/img/qr.png";
+import Qr from "../assets/img/qr-code.png";
 import Train from "../assets/img/myticket.png";
 
 import { API } from "../config/api";
@@ -28,22 +28,23 @@ function ModalInvoice({ show, showInvoice, id }) {
       </Row>
 
       <Container className="rounded">
-        <div className="my-5">
+        <div className="my-4">
           <h1>INVOICE</h1>
           <p>Kode Invoice: INV0101</p>
         </div>
 
         <Row className="">
-          <Col md={5}>
+          <Col>
             <h3 className="fw-bold">Kereta Api</h3>
+            <p>{transaction?.ticket.start_date}</p>
           </Col>
-          <Col md={5}>
+          <Col md={5} className="text-center">
             <img src={Qr} className="" alt="Qr" />
-            <p className="">TCK0101</p>
+            <p>TCK0101</p>
           </Col>
         </Row>
 
-        <Row className="mb-3">
+        <Row className="" style={{marginTop:"-120px"}}>
           <Col>
             <h3 className="fw-bold">{transaction?.ticket.name_train}</h3>
             <p>{transaction?.ticket.type_train}</p>
@@ -51,22 +52,22 @@ function ModalInvoice({ show, showInvoice, id }) {
         </Row>
 
         <Row className=" ms-2">
-          <Col md={4}>
+          <Col>
             <h4 className="fw-bold">{transaction?.ticket.start_time}</h4>
             <p>{transaction?.ticket.start_date}</p>
           </Col>
-          <Col md={4}>
+          <Col md={9}>
             <h4 className="fw-bold">{transaction?.ticket.start_station.name}</h4>
             <p>Station {transaction?.ticket.start_station.name}</p>
           </Col>
         </Row>
 
         <Row className="ms-2">
-          <Col md={4}>
+          <Col>
             <h4 className="fw-bold">{transaction?.ticket.arival_time}</h4>
             <p>{transaction?.ticket.start_date}</p>
           </Col>
-          <Col md={4}>
+          <Col md={9}>
             <h4 className="fw-bold">{transaction?.ticket.destination_station.name}</h4>
             <p>Station {transaction?.ticket.destination_station.name}</p>
           </Col>

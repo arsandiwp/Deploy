@@ -21,7 +21,7 @@ function ModalApproval ({show, showApproval}) {
                     <Form.Group className="mb-3" controlId="formGroupEmail">
                         <Form.Control type="text" placeholder="Approvaed" />
                     </Form.Group>
-                    <Button variant="danger" className="bg-gradient w-100">Save</Button>
+                    <Button variant="success" className="bg-gradient w-100">Save</Button>
                 </Form>
             </Container>
         </Modal>

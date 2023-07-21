@@ -89,6 +89,7 @@ function Invoice() {
             <div
               className="mt-4 border p-2 d-block rounded"
               style={{ width: "95%" }}
+              
             >
               <Row className="">
                 <Col>

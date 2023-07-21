@@ -190,7 +190,7 @@ function TambahTiket() {
         </Form.Group>
 
         <Button
-          variant="danger"
+          variant="success"
           className="bg-gradient w-100 my-3"
           type="submit"
         >

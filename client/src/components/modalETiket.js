@@ -30,7 +30,7 @@ function ModalETiket({ show, showETiket, id }) {
           <Col className="p-0">
             <img
               src={Train}
-              className="d-inline-block align-top ps-5 pe-3 bg-success bg-gradient"
+              className="d-inline-block align-top ps-5 pe-3 bg-danger bg-gradient"
               alt="Brand"
               style={{ borderEndStartRadius: 50, marginLeft: "220px" }}
             />
@@ -49,12 +49,13 @@ function ModalETiket({ show, showETiket, id }) {
             <h3 className="fw-bold">{transaction?.ticket.name_train}</h3>
             <p>{transaction?.ticket.type_train}</p>
           </Col>
-          <Col md={4}>
+          <Col md={4} className="text-center" style={{marginTop:"-60px"}}>
             <img src={Code} alt="qr-code"/>
+            <p>TCK0101</p>
           </Col>
         </Row>
 
-        <Row className="" style={{marginTop:"-120px"}}>
+        <Row className="" style={{marginTop:"-100px"}}>
           <Col>
             <h4 className="fw-bold">{transaction?.ticket.start_time}</h4>
             <p>{transaction?.ticket.start_date}</p>
