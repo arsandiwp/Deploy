@@ -177,7 +177,7 @@ function Invoice() {
                 <p>{transaction?.ticket.start_date}</p>
               </Col>
               <Col>
-                <h6>{transaction?.ticket.start_station.name}</h6>
+                <h6>{transaction?.ticket.start_station.kota}</h6>
                 <p>Station {transaction?.ticket.start_station.name}</p>
               </Col>
             </Row>
@@ -188,7 +188,7 @@ function Invoice() {
                 <p>{transaction?.ticket.start_date}</p>
               </Col>
               <Col>
-                <h6>{transaction?.ticket.destination_station.name}</h6>
+                <h6>{transaction?.ticket.destination_station.kota}</h6>
                 <p>Station {transaction?.ticket.destination_station.name}</p>
               </Col>
             </Row>

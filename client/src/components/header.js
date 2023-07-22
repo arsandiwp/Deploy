@@ -62,6 +62,16 @@ function Header() {
                           Ticket
                         </Dropdown.Item>
                       </Link>
+
+                      <Link
+                        to="/tambahstation"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <Dropdown.Item href="#/action-1">
+                          <img src={More} className="" alt="icket" /> Tambah
+                          Station
+                        </Dropdown.Item>
+                      </Link>
                       <Dropdown.Divider />
                       <Dropdown.Item href="#" onClick={logout}>
                         <Link to="/" style={{ textDecoration: "none", color: "black" }}>

@@ -12,6 +12,7 @@ import PrivatRoute from "./privateroute/privatroute";
 import { API, setAuthToken } from "./config/api";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "./context/userContext";
+import TambahStation from "./components/tambahStation";
 
 function App() {
   let navigate = useNavigate();
@@ -78,6 +79,7 @@ function App() {
           <Route exact path="/" element={<PrivatRoute />}>
             <Route path="/listtransaksi" element={<ListTransaksi />}></Route>
             <Route path="/tambahtiket" element={<TambahTiket />}></Route>
+            <Route path="/tambahstation" element={<TambahStation />}></Route>
           </Route>
         </Routes>
       )}

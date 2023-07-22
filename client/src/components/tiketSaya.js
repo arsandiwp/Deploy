@@ -62,7 +62,7 @@ function Tiketsaya() {
               <p className="text-secondary">{data.ticket.start_date}</p>
             </Col>
             <Col md={3}>
-              <h5>{data.ticket.start_station.name}</h5>
+              <h5>{data.ticket.start_station.kota}</h5>
               <p className="text-secondary">
                 Station {data.ticket.start_station.name}
               </p>
@@ -93,7 +93,7 @@ function Tiketsaya() {
               <p className="text-secondary">{data.ticket.start_date}</p>
             </Col>
             <Col md={4}>
-              <h5>{data.ticket.destination_station.name}</h5>
+              <h5>{data.ticket.destination_station.kota}</h5>
               <p className="text-secondary">
                 Station {data.ticket.destination_station.name}
               </p>

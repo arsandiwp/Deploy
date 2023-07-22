@@ -2,7 +2,6 @@ package handlers
 
 import (
 	dto "landtick/dto/result"
-	stationsdto "landtick/dto/stations"
 	"landtick/models"
 	"landtick/repositories"
 	"net/http"
@@ -34,9 +33,14 @@ func (h *handlerStation) FindStation(c echo.Context) error {
 
 // CreateStation
 func (h *handlerStation) CreateStation(c echo.Context) error {
-	request := new(stationsdto.CreateStationRequest)
-	if err := c.Bind(&request); err != nil {
-		return c.JSON(http.StatusBadRequest, dto.ErrorResult{Code: http.StatusBadRequest, Message: err.Error()})
+	// request := new(stationsdto.CreateStationRequest)
+	// if err := c.Bind(&request); err != nil {
+	// 	return c.JSON(http.StatusBadRequest, dto.ErrorResult{Code: http.StatusBadRequest, Message: err.Error()})
+	// }
+
+	request := models.Station{
+		Name: c.FormValue("name"),
+		Kota: c.FormValue("kota"),
 	}
 
 	validation := validator.New()
