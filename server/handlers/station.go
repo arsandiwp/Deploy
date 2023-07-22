@@ -32,7 +32,6 @@ func (h *handlerStation) FindStation(c echo.Context) error {
 	return c.JSON(http.StatusOK, dto.SuccesResult{Code: http.StatusOK, Data: dataStation{Station: stations}})
 }
 
-
 // CreateStation
 func (h *handlerStation) CreateStation(c echo.Context) error {
 	request := new(stationsdto.CreateStationRequest)
@@ -49,6 +48,7 @@ func (h *handlerStation) CreateStation(c echo.Context) error {
 
 	data := models.Station{
 		Name: request.Name,
+		Kota: request.Kota,
 	}
 
 	response, err := h.StationRepository.CreateStation(data)

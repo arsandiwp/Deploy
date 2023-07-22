@@ -98,6 +98,10 @@ function Tiketsaya() {
                 Station {data.ticket.destination_station.name}
               </p>
             </Col>
+            {data.status === "Pending" && (
+              <Col md={2} style={{ marginTop: "-50px" }}>
+              </Col>
+            )}
             {data.status === "success" && (
               <Col md={2} style={{ marginTop: "-50px" }}>
                 <img src={Qr} alt="Qr Code" />

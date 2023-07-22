@@ -6,7 +6,6 @@ import LandTick from "../assets/img/landtick.png";
 import Train from "../assets/img/Train.png";
 import Boy from "../assets/img/boy.png";
 import Ticket from "../assets/img/ticket.png";
-import Bill from "../assets/img/bill.png";
 import Out from "../assets/img/logout.png";
 import More from "../assets/img/more.png";
 import Login from "../pages/login";
@@ -60,7 +59,7 @@ function Header() {
                       >
                         <Dropdown.Item href="#/action-1">
                           <img src={More} className="" alt="icket" /> Tambah
-                          Tiket
+                          Ticket
                         </Dropdown.Item>
                       </Link>
                       <Dropdown.Divider />
