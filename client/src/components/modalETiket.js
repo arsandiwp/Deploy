@@ -19,7 +19,7 @@ function ModalETiket({ show, showETiket, id }) {
 
   return (
     <Modal show={show} size="lg" onHide={handleClose}>
-      <Container>
+      <Container className="p-4">
         <Row className="mt-3">
           <Col>
             <div className="">
@@ -32,7 +32,7 @@ function ModalETiket({ show, showETiket, id }) {
               src={Train}
               className="d-inline-block align-top ps-5 pe-3 bg-danger bg-gradient"
               alt="Brand"
-              style={{ borderEndStartRadius: 50, marginLeft: "220px" }}
+              style={{ borderEndStartRadius: 50, marginLeft: "250px" }}
             />
           </Col>
         </Row>
@@ -49,13 +49,36 @@ function ModalETiket({ show, showETiket, id }) {
             <h3 className="fw-bold">{transaction?.ticket.name_train}</h3>
             <p>{transaction?.ticket.type_train}</p>
           </Col>
-          <Col md={4} className="text-center" style={{marginTop:"-60px"}}>
-            <img src={Code} alt="qr-code"/>
+          <Col md={4} className="text-center" style={{ marginTop: "-60px" }}>
+            <img src={Code} alt="qr-code" />
             <p>TCK0101</p>
           </Col>
         </Row>
 
-        <Row className="" style={{marginTop:"-100px"}}>
+        <Row className="" style={{ marginTop: "-100px" }}>
+          <Col md={1}>
+            <div
+              style={{
+                marginTop: "20px",
+                borderColor: "pink",
+                borderRadius: "100%",
+                borderStyle: "solid",
+                borderWidth: "2px",
+                width: "1rem",
+                height: "1rem",
+              }}
+            ></div>
+            <div
+              style={{
+                borderColor: "#D0D0D0",
+                borderStyle: "solid",
+                borderWidth: "0 2px 0 0",
+                height: "4rem",
+                width: "2px",
+                margin: "3px 0 3px 7px",
+              }}
+            ></div>
+          </Col>
           <Col>
             <h4 className="fw-bold">{transaction?.ticket.start_time}</h4>
             <p>{transaction?.ticket.start_date}</p>
@@ -69,6 +92,19 @@ function ModalETiket({ show, showETiket, id }) {
         </Row>
 
         <Row className="">
+          <Col md={1}>
+            <div
+              style={{
+                borderColor: "pink",
+                borderRadius: "50%",
+                borderStyle: "solid",
+                borderWidth: "2px",
+                width: "1rem",
+                height: "1rem",
+                background: "pink",
+              }}
+            ></div>
+          </Col>
           <Col>
             <h4 className="fw-bold">{transaction?.ticket.arival_time}</h4>
             <p>{transaction?.ticket.start_date}</p>
@@ -92,7 +128,10 @@ function ModalETiket({ show, showETiket, id }) {
             <img src={Clock} className="" alt="clock" />
           </Col>
           <Col>
-            <p>Check-in <span className="fw-bold">paling lambat 90 menit</span> sebelum keberangkatan</p>
+            <p>
+              Check-in <span className="fw-bold">paling lambat 90 menit</span>{" "}
+              sebelum keberangkatan
+            </p>
           </Col>
           <Col md={1}>
             <img src={Warning} className="" alt="warning" />

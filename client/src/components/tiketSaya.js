@@ -57,6 +57,29 @@ function Tiketsaya() {
               <h4>{data.ticket.name_train}</h4>
               <p>{data.ticket.type_train}</p>
             </Col>
+            <Col md={1}>
+              <div
+                style={{
+                  marginTop: "20px",
+                  borderColor: "pink",
+                  borderRadius: "100%",
+                  borderStyle: "solid",
+                  borderWidth: "2px",
+                  width: "1rem",
+                  height: "1rem",
+                }}
+              ></div>
+              <div
+                style={{
+                  borderColor: "#D0D0D0",
+                  borderStyle: "solid",
+                  borderWidth: "0 2px 0 0",
+                  height: "4rem",
+                  width: "2px",
+                  margin: "3px 0 3px 7px",
+                }}
+              ></div>
+            </Col>
             <Col md={3}>
               <h5>{data.ticket.start_time}</h5>
               <p className="text-secondary">{data.ticket.start_date}</p>
@@ -88,19 +111,31 @@ function Tiketsaya() {
                 </div>
               )}
             </Col>
+            <Col md={1}>
+              <div
+                style={{
+                  borderColor: "pink",
+                  borderRadius: "50%",
+                  borderStyle: "solid",
+                  borderWidth: "2px",
+                  width: "1rem",
+                  height: "1rem",
+                  background: "pink",
+                }}
+              ></div>
+            </Col>
             <Col>
               <h5>{data.ticket.arival_time}</h5>
               <p className="text-secondary">{data.ticket.start_date}</p>
             </Col>
-            <Col md={4}>
+            <Col md={3}>
               <h5>{data.ticket.destination_station.kota}</h5>
               <p className="text-secondary">
                 Station {data.ticket.destination_station.name}
               </p>
             </Col>
             {data.status === "Pending" && (
-              <Col md={2} style={{ marginTop: "-50px" }}>
-              </Col>
+              <Col md={2} style={{ marginTop: "-50px" }}></Col>
             )}
             {data.status === "success" && (
               <Col md={2} style={{ marginTop: "-50px" }}>

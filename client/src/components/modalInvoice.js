@@ -44,7 +44,7 @@ function ModalInvoice({ show, showInvoice, id }) {
           </Col>
         </Row>
 
-        <Row className="" style={{marginTop:"-120px"}}>
+        <Row className="" style={{ marginTop: "-150px" }}>
           <Col>
             <h3 className="fw-bold">{transaction?.ticket.name_train}</h3>
             <p>{transaction?.ticket.type_train}</p>
@@ -52,23 +52,63 @@ function ModalInvoice({ show, showInvoice, id }) {
         </Row>
 
         <Row className=" ms-2">
+          <Col md={1}>
+            <div
+              style={{
+                marginTop: "20px",
+                borderColor: "pink",
+                borderRadius: "100%",
+                borderStyle: "solid",
+                borderWidth: "2px",
+                width: "1rem",
+                height: "1rem",
+              }}
+            ></div>
+            <div
+              style={{
+                borderColor: "#D0D0D0",
+                borderStyle: "solid",
+                borderWidth: "0 2px 0 0",
+                height: "4rem",
+                width: "2px",
+                margin: "3px 0 3px 7px",
+              }}
+            ></div>
+          </Col>
           <Col>
             <h4 className="fw-bold">{transaction?.ticket.start_time}</h4>
             <p>{transaction?.ticket.start_date}</p>
           </Col>
           <Col md={9}>
-            <h4 className="fw-bold">{transaction?.ticket.start_station.name}</h4>
+            <h4 className="fw-bold">
+              {transaction?.ticket.start_station.name}
+            </h4>
             <p>Station {transaction?.ticket.start_station.name}</p>
           </Col>
         </Row>
 
         <Row className="ms-2">
+          <Col md={1}>
+            <div
+              style={{
+                borderColor: "pink",
+                borderRadius: "50%",
+                borderStyle: "solid",
+                borderWidth: "2px",
+                width: "1rem",
+                height: "1rem",
+                background: "pink",
+              }}
+            ></div>
+          </Col>
           <Col>
             <h4 className="fw-bold">{transaction?.ticket.arival_time}</h4>
             <p>{transaction?.ticket.start_date}</p>
           </Col>
           <Col md={9}>
-            <h4 className="fw-bold">{transaction?.ticket.destination_station.name}</h4>
+            <h4 className="fw-bold">
+              {transaction?.ticket.destination_station.name}
+            </h4>
             <p>Station {transaction?.ticket.destination_station.name}</p>
           </Col>
         </Row>
