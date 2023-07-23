@@ -4,7 +4,6 @@ import { useMutation } from "react-query";
 
 import { API } from "../config/api";
 
-
 function TambahStation() {
   const [form, setForm] = useState({
     name: "",
@@ -42,7 +41,6 @@ function TambahStation() {
     <Container>
       <h2 className="my-4">Add Ticket</h2>
       <Form onSubmit={(e) => handleSubmit.mutate(e)}>
-
         <Form.Group className="mb-3" controlId="name">
           <Form.Control
             type="text"
