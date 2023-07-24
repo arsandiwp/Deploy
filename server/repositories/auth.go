@@ -24,7 +24,7 @@ func (r *repository) Register(user models.User) (models.User, error) {
 
 func (r *repository) Login(UserName string) (models.User, error) {
 	var user models.User
-	err := r.db.First(&user, "username=?", UserName).Error
+	err := r.db.First(&user, "user_name=?", UserName).Error
 
 	return user, err
 }
