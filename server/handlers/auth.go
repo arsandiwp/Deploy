@@ -78,12 +78,12 @@ func (h *handlerAuth) Login(c echo.Context) error {
 	}
 
 	user := models.User{
-		FullName: request.FullName,
+		UserName: request.UserName,
 		Password: request.Password,
 	}
 
 	// Check Fullname
-	user, err := h.AuthRepository.Login(user.FullName)
+	user, err := h.AuthRepository.Login(user.UserName)
 	if err != nil {
 		return c.JSON(http.StatusBadRequest, dto.ErrorResult{Code: http.StatusBadRequest, Message: err.Error()})
 	}

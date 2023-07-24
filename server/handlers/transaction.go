@@ -249,7 +249,7 @@ func SendMail(status string, transaction models.Transaction, user models.User) {
       <body>
       <h2>Product payment :</h2>
       <ul style="list-style-type:none;">
-        <li>Name : %s</li>
+        <li>ID Ticket : %s</li>
         <li>Total payment: Rp.%s</li>
         <li>Status : <b>%s</b></li>
       </ul>

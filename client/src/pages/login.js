@@ -20,11 +20,11 @@ function Login({ show, showLogin, showDaftar }) {
   const [state, dispatch] = useContext(UserContext);
 
   const [form, setForm] = useState({
-    fullName: "",
+    username: "",
     password: "",
   });
 
-  const { fullName, password } = form;
+  const { username, password } = form;
 
   const handleChange = (e) => {
     setForm({
@@ -55,7 +55,7 @@ function Login({ show, showLogin, showDaftar }) {
       }
 
       setForm ({
-        fullName: "",
+        username: "",
         password: "",
       })
       
@@ -69,14 +69,14 @@ function Login({ show, showLogin, showDaftar }) {
       <Container className="">
         <Form className="" onSubmit={(e) => handeleSubmit.mutate(e)}>
           <h2 className="text-danger text-center fw-bold my-3">Login</h2>
-          <Form.Group className="mb-3" controlId="fullName">
+          <Form.Group className="mb-3" controlId="username">
             <Form.Control
               type="text"
-              placeholder="Full Name"
-              value={fullName}
+              placeholder="Username"
+              value={username}
               onChange={handleChange}
-              id="fullName"
-              name="fullName"
+              id="username"
+              name="username"
               className="d-inline-flex focus-ring focus-ring-danger py-1 px-2 text-decoration-none border rounded-2"
             />
           </Form.Group>

@@ -11,7 +11,7 @@ type AuthRequest struct {
 }
 
 type LoginRequest struct {
-	FullName string `json:"fullName" validate:"required" form:"fullName"`
+	UserName string `json:"username" validate:"required" form:"username"`
 	Password string `json:"password" validate:"required" form:"password"`
 }
 

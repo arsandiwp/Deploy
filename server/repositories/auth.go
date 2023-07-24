@@ -22,9 +22,9 @@ func (r *repository) Register(user models.User) (models.User, error) {
 	return user, err
 }
 
-func (r *repository) Login(FullName string) (models.User, error) {
+func (r *repository) Login(UserName string) (models.User, error) {
 	var user models.User
-	err := r.db.First(&user, "full_name=?", FullName).Error
+	err := r.db.First(&user, "username=?", UserName).Error
 
 	return user, err
 }
