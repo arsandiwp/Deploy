@@ -167,7 +167,7 @@ function ModalETiket({ show, showETiket, id }) {
             <p>{transaction?.user.no_hp}</p>
           </Col>
           <Col>
-            <p>{transaction?.user.no_hp}</p>
+            <p>{transaction?.user.email}</p>
           </Col>
         </Row>
       </Container>
