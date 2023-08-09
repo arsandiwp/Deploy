@@ -4,11 +4,12 @@ import Train from "../assets/img/myticket.png";
 import Qr from "../assets/img/qr.png";
 
 import { useQuery } from "react-query";
-import { API } from "../config/api";
+import { API, setAuthToken } from "../config/api";
 import ModalETiket from "./modalETiket";
 import { useState } from "react";
 
 function Tiketsaya() {
+  setAuthToken(localStorage.token);
   const [showETiket, setShowETiket] = useState(false);
   const [idTransaction, setIdTransaction] = useState();
 
