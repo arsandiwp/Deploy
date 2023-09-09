@@ -5,29 +5,19 @@ import { UserContext } from "../context/userContext";
 import Login from "../pages/login";
 import Daftar from "../pages/daftar";
 import ModalData from "./modalData";
-
 import { useQuery } from "react-query";
-import { API, setAuthToken, getApi } from "../config/api";
+import { API, setAuthToken } from "../config/api";
 
 
 
 function DataTiket({startStation, destinationStation, search}) {
-
   setAuthToken(localStorage.token);
-
-
   let { data: ticket, refetch } = 
   useQuery("ticketsHomeCache", async () => {
     const response = search? (await API.get(`/ticket?start_station_id=${startStation}&destination_station_id=${destinationStation}`))
     : (await API.get("/tickets"))
-    console.log("ini respon", response)
     return response.data.data
   });
-
- getApi()
-
-  console.log("ini ticket", ticket)
-
 
   const handleBuy = async (id) => {
     try {

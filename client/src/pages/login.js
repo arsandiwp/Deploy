@@ -59,8 +59,10 @@ function Login({ show, showLogin, showDaftar }) {
         password: "",
       })
       
+      alert("Login Success")
     } catch (error) {
       console.log("login failed : ", error);
+      alert("Login Failed")
     }
   });
 

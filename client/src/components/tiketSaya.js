@@ -15,7 +15,7 @@ function Tiketsaya() {
 
   let navigate = useNavigate();
 
-  let { data: myTicket } = useQuery("TicketCache", async () => {
+  let { data: myTicket } = useQuery("TicketCachee", async () => {
     const response = await API.get("/transaction-user");
     return response.data.data;
   });

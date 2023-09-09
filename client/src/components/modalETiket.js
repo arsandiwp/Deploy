@@ -10,7 +10,6 @@ import { useQuery } from "react-query";
 
 function ModalETiket({ show, showETiket, id }) {
   const handleClose = () => showETiket(false);
-  console.log("ini id guys:", id);
 
   let { data: transaction } = useQuery(["TicketCache", id], async () => {
     const response = await API.get(`/transactions/${id}`);

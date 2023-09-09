@@ -1,11 +1,8 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Train from "../assets/img/train2.png";
 import Transfer from "../assets/img/transfer.png";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-
-import { useQuery } from "react-query";
 import { API } from "../config/api";
-import { UserContext } from "../context/userContext";
 import DataTiket from "./dataTiket";
 
 function Tiket() {
@@ -52,7 +49,13 @@ function Tiket() {
           style={{ padding: "0", margin: "0" }}
         >
           <div className="bg-light mt-3">
-            <img src={Train} width="" height="" className="py-2" alt="Icon Train" />{" "}
+            <img
+              src={Train}
+              width=""
+              height=""
+              className="py-2"
+              alt="Icon Train"
+            />{" "}
             Tiket Kerata api
           </div>
         </Col>
@@ -107,11 +110,11 @@ function Tiket() {
           <Row>
             <Form.Group as={Col} controlId="tglberangkat" className="mt-3">
               <Form.Label>Tanggal Berangkat</Form.Label>
-              <Form.Control type="date" disabled/>
+              <Form.Control type="date" disabled />
             </Form.Group>
 
             <Form.Group as={Col} controlId="" className="mt-3">
-              <Form.Check type="checkbox" label="Pulang Pergi" disabled/>
+              <Form.Check type="checkbox" label="Pulang Pergi" disabled />
             </Form.Group>
 
             <Form.Group as={Col} controlId="dewasa" className="mt-3">
@@ -135,7 +138,12 @@ function Tiket() {
             </Form.Group>
 
             <Form.Group as={Col} controlId="" className="mt-5">
-              <Button variant="danger" type="submit" onClick={handleClick} className="bg-gradient px-4 w-100">
+              <Button
+                variant="danger"
+                type="submit"
+                onClick={handleClick}
+                className="bg-gradient px-4 w-100"
+              >
                 Cari Tiket
               </Button>
             </Form.Group>
@@ -162,7 +170,11 @@ function Tiket() {
         </Col>
       </Row>
 
-      <DataTiket startStation={form.start_station_id} destinationStation={form.destination_station_id} search={search} />
+      <DataTiket
+        startStation={form.start_station_id}
+        destinationStation={form.destination_station_id}
+        search={search}
+      />
     </Container>
   );
 }

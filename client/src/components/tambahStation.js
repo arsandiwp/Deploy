@@ -32,14 +32,17 @@ function TambahStation() {
         name: "",
         kota: "",
       });
+
+      alert("Add Station Success");
     } catch (error) {
       console.log("Add station error : ", error);
+      alert("Add Station Failed");
     }
   });
 
   return (
     <Container>
-      <h2 className="my-4">Add Ticket</h2>
+      <h2 className="my-4">Add Station</h2>
       <Form onSubmit={(e) => handleSubmit.mutate(e)}>
         <Form.Group className="mb-3" controlId="name">
           <Form.Control

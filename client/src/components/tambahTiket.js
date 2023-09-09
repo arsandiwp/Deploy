@@ -71,8 +71,10 @@ function TambahTiket() {
       });
 
       navigate("/listtransaksi");
+      alert("Add Ticket Success");
     } catch (error) {
       console.log("Add Ticket Failed : ", error);
+      alert("Add Ticket Failed");
     }
   });
 
